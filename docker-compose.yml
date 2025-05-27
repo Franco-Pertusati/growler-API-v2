@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: miapi
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgresql://postgres:admin123@db:5432/miapi"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    command: sh -c "
+      until npx prisma db push; do
+        echo 'Esperando la base de datos...';
+        sleep 2;
+      done &&
+      node --watch src/server.js"
+
+volumes:
+  postgres-data:

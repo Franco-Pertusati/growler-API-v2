@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^9.8.0",
+    "@prisma/client": "^6.8.2",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.3"
+  },
+  "name": "curso-expressjs",
+  "version": "1.0.0",
+  "description": "curso express.js",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js",
+    "seed": "node prisma/seed.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "['expressjs']"
+  ],
+  "author": "Oscar Barajas <oscar@platzi.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prisma": "^6.8.2"
+  }
+}
