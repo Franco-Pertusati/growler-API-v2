@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:24.0.1
 
 WORKDIR /app
 
@@ -9,4 +9,6 @@ COPY . .
 
 RUN npx prisma generate
 
-CMD ["node", "--watch", "app.js"]
+EXPOSE 3000
+
+CMD ["node", "src/server.js"]
