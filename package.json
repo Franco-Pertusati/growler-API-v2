@@ -10,14 +10,14 @@
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.13.3"
   },
-  "name": "curso-expressjs",
+  "name": "growler-API-v2",
   "version": "1.0.0",
   "description": "curso express.js",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "node --watch app.js",
+    "dev": "node --watch src/server.js",
     "seed": "node prisma/seed.js",
-    "start": "node app.js",
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
