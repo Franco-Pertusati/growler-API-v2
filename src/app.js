@@ -5,7 +5,7 @@ const routes = require("./routes");
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:4200'
+  origin: 'https://growler-front.vercel.app'
 }));
 
 app.get("/", (req, res) => {
